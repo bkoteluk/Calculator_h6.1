@@ -3,12 +3,14 @@ package pl.homework.util;
 import pl.homework.lib.Calculator;
 import pl.homework.lib.TwoNumbers;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInterface {
 
     public TwoNumbers setTowNumbers() {
         Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
         TwoNumbers twoNumbers = new TwoNumbers();
         System.out.println("Podaj pierwszą liczbę całkowitą : ");
         twoNumbers.setFirst(scanner.nextInt());
@@ -16,6 +18,7 @@ public class UserInterface {
         System.out.println("Podaj drugą liczbę całkowitą : ");
         twoNumbers.setSecond(scanner.nextInt());
         scanner.nextLine();
+        scanner.close();
         return twoNumbers;
     }
 
